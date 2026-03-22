@@ -44,7 +44,7 @@ export default function GithubLayout() {
               initial={{ x: -300 }}
               animate={{ x: 0 }}
               exit={{ x: -300 }}
-              transition={{ type: "tween", duration: 0.2 }}
+              transition={{ type: "spring", stiffness: 260, damping: 25 }}
               className="fixed top-0 left-0 bottom-0 w-[300px] bg-[#161b22] border-r border-[#30363d] z-[70] md:hidden overflow-y-auto p-5"
             >
               <button

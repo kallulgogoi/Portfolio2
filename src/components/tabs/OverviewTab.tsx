@@ -128,6 +128,8 @@ export default function OverviewTab() {
       <div className="space-y-6">
         <div className="p-5 border border-[#30363d] rounded-md bg-[#0d1117]">
           <SectionHeader icon="github" title="GitHub Activity" />
+
+          {/* Contribution Calendar*/}
           <div className="flex justify-center overflow-x-auto py-2">
             <GitHubCalendar
               username={handles.github}
@@ -137,55 +139,78 @@ export default function OverviewTab() {
               blockMargin={4}
             />
           </div>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-          {/* LeetCode Card */}
-          <div className="p-6 border border-white rounded-md bg-[#0d1117] hover:bg-[#161b22] transition-all duration-200">
-
-            <h2 className="text-base font-semibold text-[#c9d1d9]">
-              LeetCode
-            </h2>
-            <p className="text-sm text-[#8b949e] mt-1">
-              View leetcode activity
-            </p>
-
-            <a
-              href={`https://leetcode.com/u/${handles.leetcode}/`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4"
-            >
-              <button className="px-3 py-1.5 text-sm font-medium rounded-md border border-[#30363d] bg-[#21262d] text-[#c9d1d9] hover:bg-yellow-400 hover:text-black transition">
-                View profile
-              </button>
-            </a>
-
+          {/* Real Activity Graph */}
+          <div className="mt-6">
+            <img
+              src={`https://github-readme-activity-graph.vercel.app/graph?username=${handles.github}&theme=github-dark&hide_border=true`}
+              alt="GitHub Activity Graph"
+              className="w-full rounded-md"
+            />
           </div>
 
-          {/* Codeforces Card */}
-          <div className="p-6 border border-white rounded-md bg-[#0d1117] hover:bg-[#161b22] transition-all duration-200">
+          {/* GitHub Stats */}
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <img
+              src={`https://github-readme-stats.vercel.app/api?username=${handles.github}&show_icons=true&theme=dark&hide_border=true`}
+              alt="GitHub Stats"
+              className="w-full rounded-md"
+            />
+            <img
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${handles.github}&layout=compact&theme=dark&hide_border=true`}
+              alt="Top Languages"
+              className="w-full rounded-md"
+            />
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-            <h2 className="text-base font-semibold text-[#c9d1d9]">
-              Codeforces
-            </h2>
-            <p className="text-sm text-[#8b949e] mt-1">
-              View codeforces activity
-            </p>
+            {/* LeetCode Card */}
+            <div className="p-6 border border-white rounded-md bg-[#0d1117] hover:bg-[#161b22] transition-all duration-200">
 
-            <a
-              href={`https://codeforces.com/profile/${handles.codeforces}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4"
-            >
-              <button className="px-3 py-1.5 text-sm font-medium rounded-md border border-[#30363d] bg-[#21262d] text-[#c9d1d9] hover:bg-white hover:text-black  transition">
-                View profile
-              </button>
-            </a>
+              <h2 className="text-base font-semibold text-[#c9d1d9]">
+                LeetCode
+              </h2>
+              <p className="text-sm text-[#8b949e] mt-1">
+                View leetcode activity
+              </p>
+
+              <a
+                href={`https://leetcode.com/u/${handles.leetcode}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4"
+              >
+                <button suppressHydrationWarning className="px-3 py-1.5 text-sm font-medium rounded-md border border-[#30363d] bg-[#21262d] text-[#c9d1d9] hover:bg-yellow-400 hover:text-black transition">
+                  View profile
+                </button>
+              </a>
+
+            </div>
+
+            {/* Codeforces Card */}
+            <div className="p-6 border border-white rounded-md bg-[#0d1117] hover:bg-[#161b22] transition-all duration-200">
+
+              <h2 className="text-base font-semibold text-[#c9d1d9]">
+                Codeforces
+              </h2>
+              <p className="text-sm text-[#8b949e] mt-1">
+                View codeforces activity
+              </p>
+
+              <a
+                href={`https://codeforces.com/profile/${handles.codeforces}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4"
+              >
+                <button suppressHydrationWarning className="px-3 py-1.5 text-sm font-medium rounded-md border border-[#30363d] bg-[#21262d] text-[#c9d1d9] hover:bg-white hover:text-black  transition">
+                  View profile
+                </button>
+              </a>
+
+            </div>
 
           </div>
-
         </div>
       </div>
     </div>

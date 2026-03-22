@@ -6,7 +6,7 @@ export type TabId = "overview" | "repositories" | "experience" | "education" | "
 
 const TABS: { id: TabId; label: string; icon: any; count?: number }[] = [
   { id: "overview", label: "Overview", icon: BookOpen },
-  { id: "repositories", label: "Repositories", icon: FolderGit2, count: 14 },
+  { id: "repositories", label: "Repositories", icon: FolderGit2, count: 15 },
   { id: "education", label: "Education", icon: GraduationCap },
   { id: "experience", label: "Experience", icon: Briefcase },
   { id: "contact", label: "Contact", icon: Mail },
@@ -21,6 +21,7 @@ export default function TabSwitcher({ activeTab, setActiveTab }: { activeTab: Ta
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
+            suppressHydrationWarning 
             className={`flex items-center gap-2 px-3 py-[12px] text-sm whitespace-nowrap border-b-2 transition-all relative ${
               active
                 ? "border-[#f78166] text-[#e6edf3] font-semibold"

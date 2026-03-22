@@ -26,6 +26,7 @@ export const PROJECTS: Project[] = [
     topics: ["nextjs", "typescript", "cloudinary", "tailwindcss"],
     pinned: true,
     status: "completed",
+    link: "https://github.com/gdsc-nits-org/Incand26.git",
   },
   {
     id: 5,
@@ -39,6 +40,7 @@ export const PROJECTS: Project[] = [
     topics: ["React-js", "javascript", "express-js", "node-js", "tailwindcss", "fastapi", "machine-learning", "gemini-api"],
     pinned: true,
     status: "completed",
+    link: "https://github.com/kallulgogoi/TLE.git"
   },
   {
     id: 3,
@@ -49,9 +51,10 @@ export const PROJECTS: Project[] = [
     stars: 0,
     forks: 0,
     updatedAt: "Jan 2026",
-    topics: ["react-native", "expo", "mongodb", "express-js", "cloudinary", "react-js", "tailwind-css", "google-auth", "native-wind", "node-js"],
+    topics: ["react-native", "typescript", "expo", "mongodb", "express-js", "cloudinary", "react-js", "tailwind-css", "google-auth", "native-wind", "node-js"],
     pinned: true,
     status: "completed",
+    link: "https://github.com/kallulgogoi/CSS-APP-FRONTEND.git"
   },
   {
     id: 4,
@@ -65,6 +68,7 @@ export const PROJECTS: Project[] = [
     topics: ["React-js", "Tailwind-css", "Express-js", "Node-js", "MongoDb", "socket-io", "google-oauth", "cloudinary"],
     pinned: true,
     status: "completed",
+    link: "https://github.com/kallulgogoi/quiz-project-mern.git"
   },
   {
     id: 6,
@@ -78,6 +82,7 @@ export const PROJECTS: Project[] = [
     topics: ["react", "tailwind-css", "supabase"],
     pinned: true,
     status: "completed",
+    link: "https://github.com/ComputerScienceSoceityNITS/css-official-website-2025-26.git"
   },
   {
     id: 7,
@@ -91,6 +96,21 @@ export const PROJECTS: Project[] = [
     topics: ["React-js", "Tailwind-css", "Express-js", "Node-js", "MongoDb", "Rechart", "cloudinary"],
     pinned: false,
     status: "completed",
+    link: "https://github.com/kallulgogoi/Expense-tracker.git"
+  },
+  {
+    id: 20,
+    name: "Portfolio 1",
+    description: "A modern, responsive personal portfolio featuring high-performance UI animations. Built with React.js and Tailwind CSS, leveraging Framer Motion for buttery-smooth transitions and an interactive user experience.",
+    language: "JavaScript",
+    languageColor: "#f1e05a",
+    stars: 0,
+    forks: 0,
+    updatedAt: "Sept 2025",
+    topics: ["react", "tailwindcss", "framer-motion"],
+    pinned: false,
+    status: "completed",
+    link: "https://github.com/kallulgogoi/Portfolio.git"
   },
   {
     id: 8,
@@ -104,6 +124,7 @@ export const PROJECTS: Project[] = [
     topics: ["HTML", "CSS", "javascript", "cloudinary"],
     pinned: false,
     status: "completed",
+    link: "https://github.com/kallulgogoi/Photo_to_URL.git"
   },
   {
     id: 9,
@@ -117,12 +138,12 @@ export const PROJECTS: Project[] = [
     topics: ["ui/ux", "figma", "design"],
     pinned: false,
     status: "completed",
-    link: "#insert-figma-link",
+    link: "https://www.figma.com/design/4VxElsyCeNLkDIvmjyVRdm/Tecno25UIUX?node-id=0-1&t=okx0aU3YZgefdehN-1",
   },
   {
     id: 10,
     name: "Personal Portfolio",
-    description: "Design mockups and UI considerations for a personal portfolio.",
+    description: "Design mockups and UI considerations for a personal portfolio(Abacus Css UI/UX Hacks)",
     language: "Figma",
     languageColor: "#F24E1E",
     stars: 0,
@@ -131,7 +152,7 @@ export const PROJECTS: Project[] = [
     topics: ["ui/ux", "figma", "portfolio"],
     pinned: false,
     status: "completed",
-    link: "#insert-figma-link",
+    link: "https://www.figma.com/design/2I7uTYryO4Pq3Xnl6C2J8b/CSS-UI-UX-HACKATHON?m=auto&t=9nN3VIdNXEPA067J-6",
   },
   {
     id: 11,
@@ -145,7 +166,7 @@ export const PROJECTS: Project[] = [
     topics: ["ui/ux", "figma", "portfolio"],
     pinned: false,
     status: "completed",
-    link: "#insert-figma-link",
+    link: "https://www.figma.com/design/xSJZXTkt7J1ykm6k8F1Mfm/Untitled?m=auto&t=9nN3VIdNXEPA067J-6",
   },
   {
     id: 12,
@@ -159,7 +180,7 @@ export const PROJECTS: Project[] = [
     topics: ["ui/ux", "figma", "app-design"],
     pinned: false,
     status: "completed",
-    link: "#insert-figma-link",
+    link: "https://www.figma.com/design/YwMvYJw2tLeLfkY6N64sF1/Valentine_app_GDGC_Project-_Main_File?m=auto&t=9nN3VIdNXEPA067J-6",
   },
   {
     id: 13,
@@ -173,7 +194,7 @@ export const PROJECTS: Project[] = [
     topics: ["ui/ux", "figma", "education"],
     pinned: false,
     status: "completed",
-    link: "#insert-figma-link",
+    link: "https://www.figma.com/design/S1o8tn5UKCWjfa4RZu4u5v/Semester-resources-project?m=auto&t=9nN3VIdNXEPA067J-6",
   },
   {
     id: 14,
@@ -187,7 +208,7 @@ export const PROJECTS: Project[] = [
     topics: ["ui/ux", "figma", "hackathon"],
     pinned: false,
     status: "completed",
-    link: "#insert-figma-link",
+    link: "https://www.figma.com/design/DnwCeFpzdLTZNyt6TWPBCu/UI-UX-ECS-HACKS?node-id=0-1&t=ARVCPlcGBEPdLfVH-1",
   },
 ];
 

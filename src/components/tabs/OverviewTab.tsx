@@ -6,18 +6,19 @@ import dynamic from "next/dynamic";
 
 const GitHubCalendar = dynamic(
   () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),
-  { 
-    ssr: false, 
-    loading: () => <div className="h-[150px] w-full animate-pulse bg-[#161b22] rounded-md" /> 
+  {
+    ssr: false,
+    loading: () => <div className="h-[150px] w-full animate-pulse bg-[#161b22] rounded-md" />
   }
 );
 
 const TechBadge = ({ label, slug, color }: { label: string; slug: string; color?: string }) => (
   <span className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md border border-[#30363d] bg-[#161b22] text-[#e6edf3] hover:border-[#8b949e] transition-colors">
-    <img 
-      src={`https://cdn.simpleicons.org/${slug}/${color || 'e6edf3'}`} 
-      alt={label} 
-      className="w-3.5 h-3.5" 
+    <img
+      src={`https://cdn.simpleicons.org/${slug}/${color || 'e6edf3'}`}
+      alt=""
+      className="w-3.5 h-3.5 object-contain"
+      onError={(e) => (e.currentTarget.style.visibility = 'hidden')}
     />
     {label}
   </span>
@@ -25,14 +26,20 @@ const TechBadge = ({ label, slug, color }: { label: string; slug: string; color?
 
 const SectionHeader = ({ icon, title }: { icon: string; title: string }) => (
   <h3 className="text-sm font-medium mb-4 flex items-center gap-2 text-[#8b949e]">
-    <img src={`https://cdn.simpleicons.org/${icon}`} className="w-4 h-4" alt="" />
+    <img
+      src={`https://cdn.simpleicons.org/${icon}/8b949e`}
+      className="w-4 h-4 object-contain"
+      alt=""
+    />
     {title}
   </h3>
 );
 
 export default function OverviewTab() {
   const handles = {
-    github: "kallulgogoi"
+    github: "kallulgogoi",
+    leetcode: "Kgogoi",
+    codeforces: "KALLUL"
   };
 
   return (
@@ -55,7 +62,7 @@ export default function OverviewTab() {
           <div>
             <h1 className="text-2xl font-bold mb-2">Hi there, I&apos;m Kallul Gogoi 👋</h1>
             <p className="text-[#8b949e]">
-              Computer Science student at <strong>NIT Silchar</strong>. I build full-stack applications and solve competitive programming challenges.
+              2nd Year Computer Science student at <strong>NIT Silchar</strong>. I build full-stack applications and solve competitive programming challenges.
             </p>
           </div>
 
@@ -70,7 +77,7 @@ export default function OverviewTab() {
                 <TechBadge label="SQL" slug="sqlite" color="4479A1" />
                 <TechBadge label="HTML5" slug="html5" color="E34F26" />
                 <TechBadge label="CSS" slug="css" color="1572B6" />
-                <TechBadge label="Python" slug="python" color="3776AB" />             
+                <TechBadge label="Python" slug="python" color="3776AB" />
               </div>
             </section>
 
@@ -108,7 +115,7 @@ export default function OverviewTab() {
               <h4 className="text-xs font-bold text-[#8b949e] uppercase mb-3 tracking-widest">Design & Soft Skills</h4>
               <div className="flex flex-wrap gap-2">
                 <TechBadge label="Figma" slug="figma" color="F24E1E" />
-                <TechBadge label="Canva" slug="canva" color="00C4CC" />
+                <TechBadge label="Canva" slug="canva" color="00C7B7" />
                 <span className="px-2 py-1 border border-[#30363d] rounded text-[11px] text-[#c9d1d9] bg-[#161b22]">Leadership</span>
                 <span className="px-2 py-1 border border-[#30363d] rounded text-[11px] text-[#c9d1d9] bg-[#161b22]">Time Management</span>
               </div>
@@ -120,9 +127,9 @@ export default function OverviewTab() {
       {/* Activity Graphs */}
       <div className="space-y-6">
         <div className="p-5 border border-[#30363d] rounded-md bg-[#0d1117]">
-          <SectionHeader icon="github/ffffff" title="GitHub Activity" />
+          <SectionHeader icon="github" title="GitHub Activity" />
           <div className="flex justify-center overflow-x-auto py-2">
-            <GitHubCalendar 
+            <GitHubCalendar
               username={handles.github}
               colorScheme="dark"
               fontSize={12}
@@ -131,7 +138,55 @@ export default function OverviewTab() {
             />
           </div>
         </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
+          {/* LeetCode Card */}
+          <div className="p-6 border border-white rounded-md bg-[#0d1117] hover:bg-[#161b22] transition-all duration-200">
+
+            <h2 className="text-base font-semibold text-[#c9d1d9]">
+              LeetCode
+            </h2>
+            <p className="text-sm text-[#8b949e] mt-1">
+              View leetcode activity
+            </p>
+
+            <a
+              href={`https://leetcode.com/u/${handles.leetcode}/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4"
+            >
+              <button className="px-3 py-1.5 text-sm font-medium rounded-md border border-[#30363d] bg-[#21262d] text-[#c9d1d9] hover:bg-yellow-400 hover:text-black transition">
+                View profile
+              </button>
+            </a>
+
+          </div>
+
+          {/* Codeforces Card */}
+          <div className="p-6 border border-white rounded-md bg-[#0d1117] hover:bg-[#161b22] transition-all duration-200">
+
+            <h2 className="text-base font-semibold text-[#c9d1d9]">
+              Codeforces
+            </h2>
+            <p className="text-sm text-[#8b949e] mt-1">
+              View codeforces activity
+            </p>
+
+            <a
+              href={`https://codeforces.com/profile/${handles.codeforces}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4"
+            >
+              <button className="px-3 py-1.5 text-sm font-medium rounded-md border border-[#30363d] bg-[#21262d] text-[#c9d1d9] hover:bg-white hover:text-black  transition">
+                View profile
+              </button>
+            </a>
+
+          </div>
+
+        </div>
       </div>
     </div>
   );

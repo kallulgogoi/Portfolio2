@@ -10,7 +10,13 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
   return (
     <header className="sticky top-0 z-50 bg-[#010409] px-4 lg:px-6 h-[62px] flex items-center">
       {/* Hamburger */}
-      <button onClick={onMenuClick} className="md:hidden text-white mr-3 p-1"><Menu className="w-5 h-5" /></button>
+      <button 
+        onClick={onMenuClick} 
+        suppressHydrationWarning
+        className="md:hidden text-white mr-3 p-1"
+      >
+        <Menu className="w-5 h-5" />
+      </button>
 
       {/* Logo */}
       <a href="#" className="mr-4 text-white hover:text-[#ffffffb3] transition-colors shrink-0">
@@ -26,7 +32,12 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
       <div className="flex-1 max-w-[272px] lg:max-w-[400px] hidden md:flex mr-2">
         <div className="w-full border border-[#3d444d] rounded-md flex items-center px-2 py-[5px] text-sm focus-within:border-[#58a6ff] focus-within:bg-[#0d1117] transition-all">
           <Search className="w-[14px] h-[14px] text-[#848d97] mr-2 shrink-0" />
-          <input type="text" placeholder="Type / to search" className="bg-transparent text-[#e6edf3] placeholder-[#848d97] focus:outline-none w-full text-[13px]" />
+          <input 
+            type="text" 
+            placeholder="Type / to search" 
+            suppressHydrationWarning 
+            className="bg-transparent text-[#e6edf3] placeholder-[#848d97] focus:outline-none w-full text-[13px]" 
+          />
           <kbd className="ml-1 border border-[#3d444d] rounded px-[6px] py-[1px] text-[11px] text-[#848d97] font-mono shrink-0 leading-none">/</kbd>
         </div>
       </div>
@@ -35,21 +46,21 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
 
       {/* Right icons */}
       <div className="flex items-center gap-1">
-        <button className="text-white hover:text-[#ffffffb3] p-2 hidden md:flex items-center">
+        <button suppressHydrationWarning className="text-white hover:text-[#ffffffb3] p-2 hidden md:flex items-center">
           <Plus className="w-[16px] h-[16px]" />
           <svg className="w-[12px] h-[12px] ml-[1px] text-[#848d97]" viewBox="0 0 16 16" fill="currentColor"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z" /></svg>
         </button>
-        <button className="text-white hover:text-[#ffffffb3] p-2 hidden lg:block">
+        <button suppressHydrationWarning className="text-white hover:text-[#ffffffb3] p-2 hidden lg:block">
           <svg className="w-[16px] h-[16px]" viewBox="0 0 16 16" fill="currentColor"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" /><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z" /></svg>
         </button>
-        <button className="text-white hover:text-[#ffffffb3] p-2 hidden lg:block">
+        <button suppressHydrationWarning className="text-white hover:text-[#ffffffb3] p-2 hidden lg:block">
           <svg className="w-[16px] h-[16px]" viewBox="0 0 16 16" fill="currentColor"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z" /></svg>
         </button>
-        <button className="text-white hover:text-[#ffffffb3] p-2 relative hidden md:block">
+        <button suppressHydrationWarning className="text-white hover:text-[#ffffffb3] p-2 relative hidden md:block">
           <Bell className="w-4 h-4" />
           <span className="absolute top-[6px] right-[6px] w-[8px] h-[8px] bg-[#1f6feb] rounded-full border-2 border-[#010409]" />
         </button>
-        <img src="./images/kallul.jpg" alt="Profile" className="w-[28px] h-[28px] rounded-full ml-1 cursor-pointer object-cover" />
+        <img src="/images/kallul.jpg" alt="Profile" className="w-[28px] h-[28px] rounded-full ml-1 cursor-pointer object-cover" />
       </div>
     </header>
   );

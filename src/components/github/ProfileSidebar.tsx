@@ -1,15 +1,19 @@
 "use client";
 
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Mail, LinkIcon, Users, Building, Linkedin } from "lucide-react";
 
 export default function ProfileSidebar() {
+  const [selectedCert, setSelectedCert] = useState<string | null>(null);
+
   return (
     <aside className="w-full flex flex-col text-[#e6edf3]">
       {/* Profile Picture */}
       <div className="relative mb-4 flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-0">
         <div className="relative shrink-0 z-10">
           <img
-            src="./images/kallul.jpg"
+            src="/images/kallul.jpg"
             alt="KALLUL"
             className="w-[72px] h-[72px] md:w-[296px] md:h-[296px] rounded-full object-cover border border-[#30363d] bg-[#0d1117] md:p-[2px]"
           />
@@ -21,7 +25,7 @@ export default function ProfileSidebar() {
         
         <div className="md:mt-4">
           <h1 className="text-[24px] md:text-[26px] font-semibold leading-tight">Kallul Gogoi</h1>
-          <p className="text-[20px] font-light text-[#848d97] leading-tight">@kGogoi</p>
+          <p className="text-[16px] font-light text-[#848d97] leading-tight">কল্লোল গগৈ</p>
         </div>
       </div>
 
@@ -47,8 +51,6 @@ export default function ProfileSidebar() {
         <li className="flex items-center gap-2"><LinkIcon className="w-4 h-4 text-[#848d97]" /> <a href="https://leetcode.com/KALLUL/" target="_blank" className="text-[#58a6ff] hover:underline">Leetcode</a></li>
          <li className="flex items-center gap-2"><LinkIcon className="w-4 h-4 text-[#848d97]" /> <a href="https://codeforces.com/profile/KALLUL" target="_blank" className="text-[#58a6ff] hover:underline">Codeforces</a></li>
       </ul>
-
-      {/* Social Media Links - Moved here and colorized */}
       <h3 className="font-semibold text-sm mb-3">Socials</h3>
       <div className="flex items-center gap-4 mb-6">
         <a href="https://www.linkedin.com/in/kallul-gogoi-00a5152a0/" target="_blank" rel="noopener noreferrer" className="text-[#0a66c2] hover:scale-110 transition-transform">
@@ -65,31 +67,64 @@ export default function ProfileSidebar() {
         </a>
       </div>
 
-      <h3 className="font-semibold text-sm mb-3">Achievements</h3>
-      <div className="flex flex-wrap gap-2 mb-4">
+      <h3 className="font-semibold text-sm mb-3">Certifications</h3>
+      <div className="flex flex-wrap gap-3 mb-4">
         {[
-          { icon: "🦈", label: "Pull Shark", color: "#d2a8ff", desc: "Opened pull requests that have been merged" },
-          { icon: "🧠", label: "Galaxy Brain", color: "#58a6ff", desc: "Answered discussions with accepted answers" },
-          { icon: "⚡", label: "Quickdraw", color: "#f78166", desc: "Closed an issue / PR within 5 minutes of opening" },
-          { icon: "🌌", label: "Arctic Vault", color: "#79c0ff", desc: "Contributed to 2020 Arctic Code Vault" },
-          { icon: "🤠", label: "YOLO", color: "#d29922", desc: "Merged a PR without code review" },
-          { icon: "⭐", label: "Starstruck", color: "#e3b341", desc: "Repository reached 16 stars" },
-        ].map((badge, i) => (
+          "https://res.cloudinary.com/dgechlqls/image/upload/v1756837128/jugwo4oy7nip9brlkv7f.jpg",
+          "https://res.cloudinary.com/dgechlqls/image/upload/v1756837271/txzymyjudslzzrg21qum.png",
+          "https://res.cloudinary.com/dgechlqls/image/upload/v1756880437/hm5jhvziplg65fvw7up7.jpg",
+          "https://res.cloudinary.com/dgechlqls/image/upload/v1756880488/k1ytccitc5kgrwaoqfry.jpg",
+          "https://res.cloudinary.com/dgechlqls/image/upload/v1756880528/d8mgiprun5uudfjrjnqx.png",
+          "https://res.cloudinary.com/dgechlqls/image/upload/v1756880585/vub3v9olmsojm7udz2xm.jpg"
+        ].map((url, i) => (
           <div key={i} className="group relative">
             <div
-              className="w-[48px] h-[48px] rounded-full flex items-center justify-center text-xl cursor-pointer hover:scale-110 transition-transform"
-              style={{ border: `2px solid ${badge.color}`, background: `${badge.color}15` }}
+              className="w-[72px] h-[52px] rounded-full overflow-hidden cursor-pointer hover:scale-105 transition-transform border border-[#30363d] shadow-sm"
+              onClick={() => setSelectedCert(url)}
             >
-              {badge.icon}
+              <img src={url} alt={`Certificate ${i+1}`} className="w-full h-full object-cover" />
             </div>
             {/* Tooltip */}
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#161b22] border border-[#30363d] rounded-lg text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-20 shadow-lg">
-              <p className="font-semibold text-[#e6edf3]">{badge.label}</p>
-              <p className="text-[#848d97] mt-0.5">{badge.desc}</p>
+              <p className="font-semibold text-[#e6edf3]">Certificate {i+1}</p>
+              <p className="text-[#848d97] mt-0.5">Click to view</p>
             </div>
           </div>
         ))}
       </div>
+
+      <AnimatePresence>
+        {selectedCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCert(null)}
+            className="fixed inset-0 bg-[#010409]/90 backdrop-blur-sm z-[100] flex items-center justify-center p-4 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+              className="relative max-w-[90vw] max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedCert}
+                alt="Enlarged Certificate"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg border border-[#30363d] shadow-2xl"
+              />
+              <button 
+                className="absolute -top-4 -right-4 bg-[#161b22] border border-[#30363d] hover:bg-[#30363d] text-white rounded-full p-2 transition-colors shadow-lg"
+                onClick={() => setSelectedCert(null)}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </aside>
   );
 }

@@ -44,7 +44,7 @@ export default function ProfileSidebar() {
         <li className="flex items-center gap-2"><Building className="w-4 h-4 text-[#848d97]" /> NIT Silchar</li>
         <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#848d97]" /> Sadiya, Tinsukia, India</li>
         <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-[#848d97]" /> <a href="mailto:kallulgogoinits@gmail.com" className="hover:text-[#58a6ff]">kallulgogoinits@gmail.com</a></li>
-        <li className="flex items-center gap-2"><LinkIcon className="w-4 h-4 text-[#848d97]" /> <a href="https://leetcode.com/KALLUL/" target="_b lank" className="text-[#58a6ff] hover:underline">Leetcode</a></li>
+        <li className="flex items-center gap-2"><LinkIcon className="w-4 h-4 text-[#848d97]" /> <a href="https://leetcode.com/KALLUL/" target="_blank" className="text-[#58a6ff] hover:underline">Leetcode</a></li>
          <li className="flex items-center gap-2"><LinkIcon className="w-4 h-4 text-[#848d97]" /> <a href="https://codeforces.com/profile/KALLUL" target="_blank" className="text-[#58a6ff] hover:underline">Codeforces</a></li>
       </ul>
 

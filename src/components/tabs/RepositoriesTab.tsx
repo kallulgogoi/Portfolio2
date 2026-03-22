@@ -60,8 +60,15 @@ export default function RepositoriesTab() {
           >
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
-                <a href="#" className="text-[#58a6ff] font-semibold text-lg hover:underline">{p.name}</a>
+                <a href={p.link || `https://github.com/kallulgogoi/${p.name}`} target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] font-semibold text-lg hover:underline">
+                  {p.name}
+                </a>
                 <span className="text-[10px] border border-[#30363d] rounded-full px-2 py-0.5 text-[#8b949e]">Public</span>
+                {p.status && (
+                  <span className={`text-[10px] border rounded-full px-2 py-0.5 ${p.status === 'ongoing' ? 'border-[#388bfd] text-[#58a6ff] bg-[#388bfd26]' : 'border-[#2ea043] text-[#2ea043] bg-[#2ea04326]'}`}>
+                    {p.status.charAt(0).toUpperCase() + p.status.slice(1)}
+                  </span>
+                )}
               </div>
               <p className="text-[#8b949e] text-sm mb-3 max-w-2xl">{p.description}</p>
               <div className="flex flex-wrap items-center gap-2 mb-3">

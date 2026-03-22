@@ -9,6 +9,8 @@ export interface Project {
   updatedAt: string;
   topics: string[];
   pinned?: boolean;
+  status?: "ongoing" | "completed";
+  link?: string;
 }
 
 export interface Experience {
@@ -24,4 +26,14 @@ export interface Activity {
   type: string;
   description: string;
   date: string;
+}
+
+export interface Education {
+  id: number;
+  degree: string;
+  school: string;
+  period: string;
+  description: string;
+  marks: string;
+  status: string;
 }

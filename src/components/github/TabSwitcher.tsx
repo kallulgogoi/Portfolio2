@@ -1,14 +1,13 @@
 "use client";
 
-import { BookOpen, FolderGit2, Briefcase, Mail, Code2 } from "lucide-react";
+import { BookOpen, FolderGit2, Briefcase, Mail, GraduationCap } from "lucide-react";
 
-export type TabId = "overview" | "repositories" | "experience" | "coding" | "contact";
+export type TabId = "overview" | "repositories" | "experience" | "education" | "contact";
 
 const TABS: { id: TabId; label: string; icon: any; count?: number }[] = [
   { id: "overview", label: "Overview", icon: BookOpen },
-  { id: "repositories", label: "Repositories", icon: FolderGit2, count: 8 },
-
-  { id: "coding", label: "Coding Profiles", icon: Code2 },
+  { id: "repositories", label: "Repositories", icon: FolderGit2, count: 14 },
+  { id: "education", label: "Education", icon: GraduationCap },
   { id: "experience", label: "Experience", icon: Briefcase },
   { id: "contact", label: "Contact", icon: Mail },
 ];

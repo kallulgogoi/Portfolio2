@@ -9,14 +9,13 @@ import OverviewTab from "@/components/tabs/OverviewTab";
 import RepositoriesTab from "@/components/tabs/RepositoriesTab";
 
 import ExperienceTab from "@/components/tabs/ExperienceTab";
+import EducationTab from "@/components/tabs/EducationTab";
 import ContactTab from "@/components/tabs/ContactTab";
-import CodingProfilesTab from "@/components/tabs/CodingProfilesTab";
 
 const TAB_COMPONENTS: Record<TabId, React.ComponentType> = {
   overview: OverviewTab,
   repositories: RepositoriesTab,
-
-  coding: CodingProfilesTab,
+  education: EducationTab,
   experience: ExperienceTab,
   contact: ContactTab,
 };

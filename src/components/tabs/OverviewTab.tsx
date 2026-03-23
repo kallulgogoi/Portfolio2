@@ -38,7 +38,7 @@ const SectionHeader = ({ icon, title }: { icon: string; title: string }) => (
 export default function OverviewTab() {
   const handles = {
     github: "kallulgogoi",
-    leetcode: "Kgogoi",
+    leetcode: "KALLUL",
     codeforces: "KALLUL"
   };
 

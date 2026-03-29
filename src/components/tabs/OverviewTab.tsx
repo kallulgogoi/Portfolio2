@@ -149,19 +149,6 @@ export default function OverviewTab() {
             />
           </div>
 
-          {/* GitHub Stats */}
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <img
-              src={`https://github-readme-stats.vercel.app/api?username=${handles.github}&show_icons=true&theme=dark&hide_border=true`}
-              alt="GitHub Stats"
-              className="w-full rounded-md"
-            />
-            <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${handles.github}&layout=compact&theme=dark&hide_border=true`}
-              alt="Top Languages"
-              className="w-full rounded-md"
-            />
-          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
             {/* LeetCode Card */}

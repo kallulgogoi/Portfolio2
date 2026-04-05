@@ -9,10 +9,11 @@ export const PROJECTS: Project[] = [
     languageColor: "#3178c6",
     stars: 0,
     forks: 0,
-    updatedAt: "today",
+    updatedAt: "April 2026",
     topics: ["nextjs", "typescript", "tailwindcss", "framer-motion"],
     pinned: true,
-    status: "ongoing",
+    status: "completed",
+    link: "https://github.com/POSUA-NITS/Posua-2026.git",
   },
   {
     id: 2,
